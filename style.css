@@ -1,4 +1,4 @@
-
+/* RESET */
 * {
   margin: 0;
   padding: 0;
@@ -10,6 +10,7 @@
 header {
   background: #0b0b0b;
   padding: 15px 30px;
+  position: relative;
 }
 
 /* NAVBAR */
@@ -40,8 +41,11 @@ nav {
   font-weight: 500;
 }
 
-.nav-links li a:hover {
+.nav-links li a:hover,
+.nav-links li a.active {
   color: gold;
+  border-bottom: 2px solid gold;
+  padding-bottom: 3px;
 }
 
 /* MOBILE MENU BUTTON */
@@ -52,34 +56,73 @@ nav {
   cursor: pointer;
 }
 
-/* HERO SECTION */
+/* =========================
+   HERO SECTION (FIXED SLIDESHOW)
+========================= */
+
 .hero {
   height: 90vh;
-  background: url('../images/eyo.jpg') center/cover no-repeat;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
 
-/* DARK OVERLAY */
+/* SLIDESHOW LAYER */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  animation: slideBackground 20s infinite;
+  z-index: 0;
+}
+
+/* SLIDESHOW IMAGES */
+@keyframes slideBackground {
+  0% {
+    background-image: url('Eyo_Awise_banner.jpg');
+  }
+  25% {
+    background-image: url('Eyo_Iga_Faji_procession.jpg');
+  }
+  50% {
+    background-image: url('Eyo_Olokun.jpg');
+  }
+  75% {
+    background-image: url('EyoPillars.jpg');
+  }
+  100% {
+    background-image: url('Eyo_Iga_Jump.jpg');
+  }
+}
+
+/* OVERLAY */
 .overlay {
-  background: rgba(0,0,0,0.6);
+  position: relative;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.65);
   padding: 40px;
   text-align: center;
   color: white;
   border-radius: 10px;
+  max-width: 700px;
 }
 
+/* TEXT */
 .hero h1 {
-  font-size: 40px;
+  font-size: 42px;
   color: gold;
   margin-bottom: 10px;
+  animation: fadeIn 2s ease-in-out;
 }
 
 .hero p {
   font-size: 18px;
   margin-bottom: 20px;
+  animation: fadeIn 3s ease-in-out;
 }
 
 /* BUTTON */
@@ -131,7 +174,7 @@ nav {
 }
 
 .card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-8px);
 }
 
 /* FOOTER */
@@ -140,6 +183,18 @@ footer {
   padding: 20px;
   background: black;
   color: gold;
+}
+
+/* FADE ANIMATION */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* RESPONSIVE */
@@ -166,5 +221,13 @@ footer {
   .cards {
     flex-direction: column;
     align-items: center;
+  }
+
+  .hero h1 {
+    font-size: 30px;
+  }
+
+  .hero p {
+    font-size: 16px;
   }
 }
