@@ -6,19 +6,21 @@
   <title>Contact Us</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
 <header>
   <nav>
     <div class="logo">EYO FESTIVAL</div>
-<ul class="nav-links" id="navLinks">
+
+    <ul class="nav-links" id="navLinks">
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">History</a></li>
       <li><a href="culture.html">Culture</a></li>
       <li><a href="gallery.html">Gallery</a></li>
       <li><a href="tourism.html">Tourism</a></li>
       <li><a href="events.html">Events</a></li>
-      <li><a href="contact.html">Contact</a></li>hi
+      <li><a href="contact.html">Contact</a></li>
       <li><a href="developers.html">Developers</a></li>
     </ul>
 
@@ -26,30 +28,58 @@
   </nav>
 </header>
 
+<!-- HERO -->
 <section class="page-banner">
-  <h1>Contact Us</h1>
+  <div class="banner-overlay">
+    <h1>Contact Us</h1>
+    <p>We’d love to hear from you</p>
+  </div>
 </section>
 
+<!-- CONTACT SECTION -->
 <section class="contact-section">
 
-  <div class="contact-info">
-    <h2>Contact Details</h2>
+  <div class="contact-wrapper">
 
-    <p>Email:leemercy252@gmail.com</p>
-    <p>Phone: +234 8090195347</p>
-    <p>Address: Lagos Island, Nigeria</p>
+    <!-- LEFT INFO -->
+    <div class="contact-info">
+      <h2>Get in Touch</h2>
+      <p>Send us a message and we will respond as soon as possible.</p>
+
+      <div class="info-box">📧 leemercy252@gmail.com</div>
+      <div class="info-box">📞 +234 8090195347</div>
+      <div class="info-box">📍 Lagos Island, Nigeria</div>
+    </div>
+
+    <!-- FORM -->
+    <form id="contactForm" class="contact-form">
+
+      <input type="text" id="name" placeholder="Your Full Name" required>
+
+      <input type="email" id="email" placeholder="Your Email Address" required>
+
+      <textarea id="message" placeholder="Write your message..." required></textarea>
+
+      <button type="submit">Send Message</button>
+
+    </form>
+
   </div>
-  <form id="contactForm">
-    <input type="text" id="name" placeholder="   ">
 
-    </section>
+</section>
 
-<!-- ================= FOOTER ================= -->
+<!-- FOOTER -->
 <footer>
   <p>© 2026 Eyo Festival Website</p>
 </footer>
 
-<!-- JS -->
+<!-- EMAILJS + JS -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<script>
+  emailjs.init("1GlwbVyWxi9uARurG");
+</script>
+
 <script src="script.js"></script>
 
 </body>

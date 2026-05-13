@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 /* =============================
-   SMOOTH SCROLL (ANCHOR LINKS ONLY)
+   SMOOTH SCROLL
 ============================= */
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -61,6 +61,37 @@ document.addEventListener("DOMContentLoaded", () => {
         });
       }
 
+    });
+
+  });
+
+});
+
+
+/* EMAILJS CONTACT FORM */
+document.addEventListener("DOMContentLoaded", () => {
+
+  const form = document.getElementById("contactForm");
+
+  if (!form) return;
+
+  emailjs.init("1GlwbVyWxi9uARurG");
+
+  form.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    emailjs.send("service_j1q60xe", "template_7u1eg0e", {
+      from_name: document.getElementById("name").value,
+      from_email: document.getElementById("email").value,
+      message: document.getElementById("message").value,
+    })
+    .then(() => {
+      alert("Message sent successfully ✔");
+      form.reset();
+    })
+    .catch((error) => {
+      console.log("ERROR:", error);
+      alert("Failed to send message ❌ Check console");
     });
 
   });

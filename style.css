@@ -478,3 +478,91 @@ ol li {
   color: gold;
   font-weight: bold;
 }
+/* =========================
+   CONTACT PAGE (MODERN UI)
+========================= */
+
+.contact-section {
+  padding: 80px 20px;
+  background: #111;
+  display: flex;
+  justify-content: center;
+}
+
+.contact-wrapper {
+  display: flex;
+  gap: 40px;
+  max-width: 1000px;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+/* LEFT SIDE */
+.contact-info {
+  flex: 1;
+  min-width: 280px;
+}
+
+.contact-info h2 {
+  color: gold;
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.contact-info p {
+  color: #ccc;
+  margin-bottom: 20px;
+}
+
+.info-box {
+  background: rgba(255,255,255,0.05);
+  padding: 12px;
+  margin-bottom: 10px;
+  border-left: 3px solid gold;
+  border-radius: 8px;
+  color: white;
+}
+
+/* FORM */
+.contact-form {
+  flex: 1;
+  min-width: 280px;
+  background: rgba(255,255,255,0.05);
+  padding: 25px;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 20px rgba(255,215,0,0.1);
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 10px;
+  background: rgba(0,0,0,0.4);
+  color: white;
+  outline: none;
+}
+
+.contact-form textarea {
+  height: 120px;
+  resize: none;
+}
+
+.contact-form button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  background: gold;
+  color: black;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.contact-form button:hover {
+  background: white;
+}
