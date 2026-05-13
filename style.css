@@ -566,3 +566,92 @@ ol li {
 .contact-form button:hover {
   background: white;
 }
+.ticket-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+.ticket-box {
+  width: 100%;
+  max-width: 600px;
+  background: #1a1a1a;
+  border: 1px solid gold;
+  border-radius: 15px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.15);
+}
+
+.ticket-box h2 {
+  color: gold;
+}
+
+.ticket-box p {
+  color: #ccc;
+  margin-bottom: 20px;
+}
+
+.ticket-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.ticket-form input,
+.ticket-form select {
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #333;
+  background: #111;
+  color: white;
+}
+
+.ticket-form input:focus,
+.ticket-form select:focus {
+  border-color: gold;
+}
+
+.btn {
+  padding: 12px;
+  background: gold;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: white;
+}
+
+.ticket-result {
+  margin-top: 20px;
+  background: #0b0b0b;
+  border: 1px solid gold;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: left;
+}
+
+.ticket-result h3 {
+  color: gold;
+  text-align: center;
+}
+
+.download-btn {
+  margin-top: 10px;
+  width: 100%;
+  padding: 10px;
+  background: gold;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.download-btn:hover {
+  background: white;
+}

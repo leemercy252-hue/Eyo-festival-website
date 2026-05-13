@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Ticket | Eyo Festival</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="ticket.css">
+</head>
+
+<body>
+
+<header>
+  <nav>
+    <div class="logo">EYO FESTIVAL</div>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">History</a></li>
+      <li><a href="culture.html">Culture</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="tourism.html">Tourism</a></li>
+      <li><a href="events.html">Events</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="developers.html">Developers</a></li>
+    </ul>
+
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+  </nav>
+</header>
+
+<section class="ticket-page">
+
+  <div class="ticket-box">
+
+    <h2>🎟️ Book Your Ticket</h2>
+    <p>Fill in your details to generate your ticket</p>
+
+    <form id="ticketForm" class="ticket-form">
+
+      <input type="text" id="name" placeholder="Full Name" required>
+
+      <input type="email" id="email" placeholder="Email Address" required>
+
+      <select id="type" required>
+        <option value="">Select Ticket Type</option>
+        <option value="Standard Pass">Standard Pass</option>
+        <option value="Premium Experience">Premium Experience</option>
+        <option value="VIP Package">VIP Package</option>
+      </select>
+
+     <button class="download-btn" onclick="downloadPDF()">
+  Download Ticket
+</button>
+
+    </form>
+
+    <div id="ticketResult"></div>
+
+  </div>
+
+</section>
+
+<footer>
+  <p>© 2026 Eyo Festival Website</p>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="script.js"></script>
+<script src="ticket.js"></script>
+
+</body>
+</html>
