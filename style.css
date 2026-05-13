@@ -1,4 +1,6 @@
-/* RESET */
+/* =========================
+   RESET
+========================= */
 * {
   margin: 0;
   padding: 0;
@@ -6,58 +8,76 @@
   font-family: Arial, sans-serif;
 }
 
-/* HEADER */
+body {
+  background: #111;
+  color: white;
+}
+
+/* =========================
+   HEADER + NAVBAR
+========================= */
+
 header {
   background: #0b0b0b;
   padding: 15px 30px;
   position: relative;
+  z-index: 1000;
 }
 
-/* NAVBAR */
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
 }
 
+/* LOGO */
 .logo {
   color: gold;
   font-size: 22px;
   font-weight: bold;
-  letter-spacing: 2px;
 }
 
-/* NAV LINKS */
+/* MENU ICON */
+.menu-toggle {
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+  display: block;
+}
+
+/* NAV LINKS (HIDDEN BY DEFAULT) */
 .nav-links {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 70px;
+  right: 0;
+  background: black;
+  width: 220px;
+  padding: 20px;
   list-style: none;
-  display: flex;
-  gap: 20px;
+  gap: 15px;
+  z-index: 999;
 }
 
-.nav-links li a {
+/* SHOW MENU */
+.nav-links.active {
+  display: flex;
+}
+
+.nav-links a {
   text-decoration: none;
   color: white;
-  transition: 0.3s;
   font-weight: 500;
 }
 
-.nav-links li a:hover,
-.nav-links li a.active {
+.nav-links a:hover {
   color: gold;
-  border-bottom: 2px solid gold;
-  padding-bottom: 3px;
-}
-
-/* MOBILE MENU BUTTON */
-.menu-toggle {
-  display: none;
-  font-size: 28px;
-  color: white;
-  cursor: pointer;
 }
 
 /* =========================
-   HERO SECTION (FIXED SLIDESHOW)
+   HERO SECTION
 ========================= */
 
 .hero {
@@ -66,10 +86,10 @@ nav {
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
   overflow: hidden;
 }
 
-/* SLIDESHOW LAYER */
 .hero::before {
   content: "";
   position: absolute;
@@ -80,20 +100,24 @@ nav {
   z-index: 0;
 }
 
-/* SLIDESHOW IMAGES */
 @keyframes slideBackground {
+
   0% {
     background-image: url('Eyo_Awise_banner.jpg');
   }
+
   25% {
     background-image: url('Eyo_Iga_Faji_procession.jpg');
   }
+
   50% {
     background-image: url('Eyo_Olokun.jpg');
   }
+
   75% {
     background-image: url('EyoPillars.jpg');
   }
+
   100% {
     background-image: url('Eyo_Iga_Jump.jpg');
   }
@@ -103,81 +127,138 @@ nav {
 .overlay {
   position: relative;
   z-index: 1;
-  background: rgba(0, 0, 0, 0.65);
+  background: rgba(0,0,0,0.6);
   padding: 40px;
-  text-align: center;
-  color: white;
   border-radius: 10px;
   max-width: 700px;
 }
 
-/* TEXT */
+/* HERO TEXT */
 .hero h1 {
-  font-size: 42px;
   color: gold;
+  font-size: 42px;
   margin-bottom: 10px;
-  animation: fadeIn 2s ease-in-out;
 }
 
 .hero p {
-  font-size: 18px;
-  margin-bottom: 20px;
-  animation: fadeIn 3s ease-in-out;
+  margin-bottom: 15px;
 }
 
 /* BUTTON */
 .btn {
+  display: inline-block;
   padding: 10px 20px;
   background: gold;
   color: black;
   text-decoration: none;
-  font-weight: bold;
   border-radius: 5px;
-  transition: 0.3s;
 }
 
 .btn:hover {
   background: white;
 }
 
-/* SECTION */
+/* =========================
+   SECTIONS
+========================= */
+
 .section {
   padding: 60px 20px;
   text-align: center;
   background: #111;
-  color: white;
 }
 
 .section h2 {
   color: gold;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
-/* CARDS */
+/* =========================
+   CARDS
+========================= */
+
 .cards {
   display: flex;
   justify-content: center;
   gap: 20px;
-  padding: 40px;
+  padding: 50px 20px;
   background: #0b0b0b;
+  flex-wrap: wrap;
 }
 
 .card {
   background: #1a1a1a;
-  padding: 20px;
-  width: 250px;
+  padding: 25px;
+  width: 280px;
   border-radius: 10px;
   text-align: center;
-  transition: 0.3s;
-  color: white;
   border: 1px solid gold;
+  transition: 0.3s;
 }
 
 .card:hover {
   transform: translateY(-8px);
 }
 
-/* FOOTER */
+.card h3 {
+  color: gold;
+}
+
+/* =========================
+   DEVELOPER CARDS
+========================= */
+
+.dev-cards {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 50px 20px;
+  flex-wrap: wrap;
+  background: #0b0b0b;
+}
+
+.dev-card {
+  background: #1a1a1a;
+  width: 300px;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  border: 1px solid gold;
+  transition: 0.3s;
+}
+
+.dev-card:hover {
+  transform: translateY(-10px);
+}
+
+.dev-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.dev-card h3 {
+  color: gold;
+}
+
+.dev-card h4 {
+  font-size: 14px;
+  opacity: 0.8;
+  margin-bottom: 10px;
+}
+
+.dev-card p {
+  font-size: 14px;
+  color: #ddd;
+  line-height: 1.6;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
 footer {
   text-align: center;
   padding: 20px;
@@ -185,43 +266,11 @@ footer {
   color: gold;
 }
 
-/* FADE ANIMATION */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
+/* =========================
+   RESPONSIVE
+========================= */
 
 @media (max-width: 768px) {
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    background: black;
-    position: absolute;
-    top: 70px;
-    right: 0;
-    width: 200px;
-    padding: 20px;
-  }
-
-  .nav-links.active {
-    display: flex;
-  }
-
-  .menu-toggle {
-    display: block;
-  }
-
-  .cards {
-    flex-direction: column;
-    align-items: center;
-  }
 
   .hero h1 {
     font-size: 30px;
@@ -229,5 +278,10 @@ footer {
 
   .hero p {
     font-size: 16px;
+  }
+
+  .cards {
+    flex-direction: column;
+    align-items: center;
   }
 }

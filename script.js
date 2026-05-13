@@ -1,46 +1,35 @@
-// =============================
-// MOBILE MENU TOGGLE
-// =============================
+/* =============================
+   MOBILE MENU TOGGLE
+============================= */
 function toggleMenu() {
-  const navLinks = document.getElementById("navLinks");
-  navLinks.classList.toggle("active");
+  document.getElementById("navLinks").classList.toggle("active");
 }
 
 
-// =============================
-// SMOOTH SCROLL (same-page links only)
-// =============================
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener("click", function (e) {
-    const target = document.querySelector(this.getAttribute("href"));
-
-    if (target) {
-      e.preventDefault();
-      target.scrollIntoView({
-        behavior: "smooth"
-      });
-    }
-  });
-});
-
-
-// =============================
-// CLOSE MOBILE MENU AFTER CLICK
-// =============================
-document.querySelectorAll(".nav-links a").forEach(link => {
-  link.addEventListener("click", () => {
-    const navLinks = document.getElementById("navLinks");
-    navLinks.classList.remove("active");
-  });
-});
-
-
-// =============================
-// ACTIVE MENU HIGHLIGHTING
-// =============================
+/* =============================
+   CLOSE MENU WHEN LINK CLICKED
+============================= */
 document.addEventListener("DOMContentLoaded", () => {
+
+  const navLinks = document.getElementById("navLinks");
   const links = document.querySelectorAll(".nav-links a");
+
+  links.forEach(link => {
+    link.addEventListener("click", () => {
+      navLinks.classList.remove("active");
+    });
+  });
+
+});
+
+
+/* =============================
+   ACTIVE PAGE HIGHLIGHT
+============================= */
+document.addEventListener("DOMContentLoaded", () => {
+
   const currentPage = window.location.pathname.split("/").pop();
+  const links = document.querySelectorAll(".nav-links a");
 
   links.forEach(link => {
     const linkPage = link.getAttribute("href");
@@ -49,4 +38,31 @@ document.addEventListener("DOMContentLoaded", () => {
       link.classList.add("active");
     }
   });
+
+});
+
+
+/* =============================
+   SMOOTH SCROLL (ANCHOR LINKS ONLY)
+============================= */
+document.addEventListener("DOMContentLoaded", () => {
+
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+
+    anchor.addEventListener("click", function (e) {
+
+      const target = document.querySelector(this.getAttribute("href"));
+
+      if (target) {
+        e.preventDefault();
+
+        target.scrollIntoView({
+          behavior: "smooth"
+        });
+      }
+
+    });
+
+  });
+
 });
