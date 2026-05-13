@@ -280,3 +280,201 @@ footer {
     align-items: center;
   }
 }
+/* PAGE BANNER */
+.page-banner {
+  height: 50vh;
+  background: url('Eyo_Awise_banner.jpg') center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.banner-overlay {
+  background: rgba(0,0,0,0.6);
+  padding: 40px;
+  border-radius: 10px;
+}
+
+.page-banner h1 {
+  color: gold;
+  font-size: 45px;
+  margin-bottom: 10px;
+}
+
+.page-banner p {
+  color: white;
+  font-size: 18px;
+}
+
+/* INFO SECTION */
+.info-section {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 50px 20px;
+  flex-wrap: wrap;
+  background: #0b0b0b;
+}
+
+.info-box {
+  background: #1a1a1a;
+  width: 250px;
+  padding: 25px;
+  border-radius: 10px;
+  text-align: center;
+  border: 1px solid gold;
+}
+
+.info-box h3 {
+  color: gold;
+  margin-bottom: 10px;
+}
+
+/* TIMELINE */
+.timeline {
+  max-width: 800px;
+  margin: auto;
+}
+
+.timeline-item {
+  background: #1a1a1a;
+  margin-bottom: 20px;
+  padding: 20px;
+  border-left: 4px solid gold;
+  border-radius: 5px;
+}
+
+.timeline-item h3 {
+  color: gold;
+  margin-bottom: 10px;
+}
+
+/* CUSTOM LIST */
+.custom-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.custom-list li {
+  margin-bottom: 15px;
+  line-height: 1.7;
+}
+
+/* GALLERY */
+.gallery-preview {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+  padding: 40px;
+}
+
+.gallery-preview img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.gallery-preview img:hover {
+  transform: scale(1.03);
+}
+
+/* STATS */
+.stats-section {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 60px 20px;
+  background: black;
+  text-align: center;
+  flex-wrap: wrap;
+}
+
+.stat h2 {
+  color: gold;
+  font-size: 42px;
+}
+
+.stat p {
+  color: white;
+}
+
+/* HIGHLIGHT BOX */
+.highlight-box {
+  background: #1a1a1a;
+  border-left: 4px solid gold;
+  padding: 30px;
+  max-width: 800px;
+  margin: auto;
+  border-radius: 10px;
+  font-style: italic;
+}
+
+/* HOVER EFFECT */
+.card:hover,
+.info-box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 20px rgba(255,215,0,0.4);
+}
+
+/* ANIMATION */
+.section,
+.card,
+.info-box {
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+
+  .page-banner h1 {
+    font-size: 30px;
+  }
+
+  .stats-section {
+    flex-direction: column;
+  }
+
+  .gallery-preview {
+    grid-template-columns: 1fr;
+  }
+}
+/* =========================
+   REMOVE DEFAULT LIST STYLE
+========================= */
+
+ul,
+ol {
+  list-style: none;
+  padding-left: 0;
+  margin-left: 0;
+}
+
+/* CUSTOM SPACING FOR LIST ITEMS */
+ul li,
+ol li {
+  margin-bottom: 12px;
+  line-height: 1.7;
+}
+
+/* OPTIONAL GOLD BULLET STYLE */
+.custom-list li::before {
+  content: "• ";
+  color: gold;
+  font-weight: bold;
+}
